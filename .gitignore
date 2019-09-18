@@ -2,5 +2,6 @@
 *.log
 .idea
 node_modules
+lib
 coverage
 .nyc_output

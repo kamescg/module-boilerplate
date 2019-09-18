@@ -22,8 +22,22 @@
   "contributors": [
     "Kames <info@kamescg.com> (https://www.kamescg.com)"
   ],
+  "scripts": {
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "develop": "nodemon --ignore './lib/' --exec cross-env BABEL_ENV=production babel src --out-dir lib",
+    "test": "npm run lint && npm run ava",
+    "test-coverage": "npm run lint && npm run nyc",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
+    "lint": "xo && remark . -qfo",
+    "ava": "cross-env NODE_ENV=test ava",
+    "nyc": "cross-env NODE_ENV=test nyc ava"
+  },
   "dependencies": {},
   "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-react": "^7.0.0",
     "@commitlint/cli": "latest",
     "@commitlint/config-conventional": "latest",
     "ava": "latest",
@@ -34,6 +48,7 @@
     "fixpack": "latest",
     "husky": "latest",
     "lint-staged": "latest",
+    "nodemon": "^1.19.2",
     "nyc": "latest",
     "remark-cli": "latest",
     "remark-preset-github": "latest",
@@ -92,14 +107,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/KamesCG/module-boilerplate"
-  },
-  "scripts": {
-    "ava": "cross-env NODE_ENV=test ava",
-    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "xo && remark . -qfo",
-    "nyc": "cross-env NODE_ENV=test nyc ava",
-    "test": "npm run lint && npm run ava",
-    "test-coverage": "npm run lint && npm run nyc"
   },
   "xo": {
     "prettier": true,

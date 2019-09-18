@@ -1,7 +1,7 @@
 const test = require('ava');
 
+const Script = require('../src');
 const { beforeEach, afterEach } = require('./helpers');
-const Script = require('..');
 
 test.beforeEach(beforeEach);
 test.afterEach(afterEach);
