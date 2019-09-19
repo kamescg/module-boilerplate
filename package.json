@@ -3,25 +3,18 @@
   "description": "NPM Module Boilerplate",
   "version": "1.0.0",
   "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
-  "ava": {
-    "failFast": true,
-    "verbose": true,
-    "helpers": [
-      "test/helpers/**/*"
-    ]
-  },
+  
   "bugs": {
     "url": "https://github.com/KamesCG/module-boilerplate/issues",
     "email": "info@kamescg.com"
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "contributors": [
     "Kames <info@kamescg.com> (https://www.kamescg.com)"
   ],
+  "homepage": "https://github.com/KamesCG/module-boilerplate",
+  "license": "MIT",
+  "keywords": ["npm"],
+  "engines": {"node": ">=8.3"},
   "scripts": {
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
     "develop": "nodemon --ignore './lib/' --exec cross-env BABEL_ENV=production babel src --out-dir lib",
@@ -33,6 +26,7 @@
     "nyc": "cross-env NODE_ENV=test nyc ava"
   },
   "dependencies": {},
+  "peerDependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
@@ -54,20 +48,25 @@
     "remark-preset-github": "latest",
     "xo": "latest"
   },
-  "engines": {
-    "node": ">=8.3"
+  "ava": {
+    "failFast": true,
+    "verbose": true,
+    "helpers": [
+      "test/helpers/**/*"
+    ]
   },
-  "homepage": "https://github.com/KamesCG/module-boilerplate",
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "npm test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
-  "keywords": [
-    "npm"
-  ],
-  "license": "MIT",
+  
   "lint-staged": {
     "*.js": [
       "xo --fix",
