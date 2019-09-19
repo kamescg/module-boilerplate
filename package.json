@@ -3,7 +3,9 @@
   "description": "NPM Module Boilerplate",
   "version": "1.0.0",
   "author": "Kames <info@kamescg.com> (https://www.kamescg.com)",
-  
+  "homepage": "https://github.com/KamesCG/module-boilerplate",
+  "license": "MIT",
+  "keywords": ["npm"],
   "bugs": {
     "url": "https://github.com/KamesCG/module-boilerplate/issues",
     "email": "info@kamescg.com"
@@ -11,9 +13,6 @@
   "contributors": [
     "Kames <info@kamescg.com> (https://www.kamescg.com)"
   ],
-  "homepage": "https://github.com/KamesCG/module-boilerplate",
-  "license": "MIT",
-  "keywords": ["npm"],
   "engines": {"node": ">=8.3"},
   "scripts": {
     "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
